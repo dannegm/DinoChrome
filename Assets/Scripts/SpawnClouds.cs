@@ -6,7 +6,8 @@ public class SpawnClouds : MonoBehaviour {
 	public Transform CloudPrefab;
 	public float HeightRange;
 	public float Time2Spawn;
-
+	
+	public Score score;
 	public DinoController Dino;
 	public Transform Point2Destroy;
 
@@ -27,8 +28,10 @@ public class SpawnClouds : MonoBehaviour {
 			float RandHeight = Random.Range (-HeightRange, HeightRange);
 			Transform tCloud = Instantiate(CloudPrefab, new Vector3(transform.position.x, transform.position.y + RandHeight, transform.position.z), transform.rotation) as Transform;
 			CloudController tcCloud = tCloud.GetComponent<CloudController>();
+
 			tcCloud.Dino = Dino;
 			tcCloud.Point2Destroy = Point2Destroy;
+			tcCloud.score = score;
 		}
 	}
 }

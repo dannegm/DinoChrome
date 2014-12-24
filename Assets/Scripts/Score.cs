@@ -17,46 +17,57 @@ public class Score : MonoBehaviour {
 	private float ActualTime = 0f;
 	private float ATime = 0f;
 
+	private float LastTap = 0;
+	private float TimeToTap = 0.5f;
+
+	private float cacheDinoSpeed = 0;
+
 	void Start () {
 		Hi = PlayerPrefs.GetInt ("hi", 0);
 		Points = 0;
 		GameOverText.position = new Vector3 (0, 2.198273f, -200);
 		isGameOver = false;
 		ActualTime = Time.time;
+		
+		Animtr = Dino.GetComponent<Animator> ();
+		Dinoco = Dino.GetComponent<DinoController> ();
+
+		cacheDinoSpeed = Dinoco.Speed;
+
+		//PlayerPrefs.SetInt("hi", 0);
 	}
 	
 	// Update is called once per frame
 	public void GameOver () {
 		if (Points > Hi) {
+			Hi = Points;
 			PlayerPrefs.SetInt("hi", Points);
 		}
+		Dinoco.Speed = cacheDinoSpeed;
 
 		Time.timeScale = 0;
 		GameOverText.position = new Vector3 (0, 2.198273f, 0);
 		isGameOver = true;
-		
-		Animtr = Dino.GetComponent<Animator> ();
-		Dinoco = Dino.GetComponent<DinoController> ();
 	}
 
 	void Update () {
 		ATime = (Time.time - ActualTime);
-		Points = (int) (ATime * (Dinoco.Speed / 2));
-
+		if (!isGameOver) {
+			Points = (int)(ATime * (Dinoco.Speed / 2));
+		}
 
 		if (isGameOver) {
-			if (Input.GetMouseButtonDown (0) || Input.GetKey(KeyCode.Space) ||Input.touchCount > 0) {
+			if (Utils.DaTouch().name == "ReloadButton") {
 				isGameOver = false;
 				cacheGO = false;
+				Points = 0;
 			}
 		}
 
 		if (!isGameOver && !cacheGO) {
 			cacheGO = true;
-
 			GameOverText.position = new Vector3 (0, 2.198273f, -200);
 			isGameOver = false;
-			Points = 0;
 			Animtr.SetBool("isDead", false);
 			ActualTime = Time.time;
 			Time.timeScale = 1;

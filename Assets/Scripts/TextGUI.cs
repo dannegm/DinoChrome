@@ -37,6 +37,10 @@ public class TextGUI : MonoBehaviour {
 			sound.Up.Play();
 		}
 
+		if (score.isGameOver) {
+			ActualScore100 = 100;
+		}
+
 		string HI = score.Hi.ToString ("D5");
 		string POINTS = score.Points.ToString ("D5");
 		

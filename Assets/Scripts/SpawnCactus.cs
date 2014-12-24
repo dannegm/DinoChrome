@@ -7,6 +7,7 @@ public class SpawnCactus : MonoBehaviour {
 	public Transform[] CactusPrefabs;
 	public Vector2 Time2Spawn;
 	
+	public Score score;
 	public DinoController Dino;
 	public Transform Point2Destroy;
 	
@@ -29,8 +30,10 @@ public class SpawnCactus : MonoBehaviour {
 
 			Transform tClactus = Instantiate(Cactus, transform.position, transform.rotation) as Transform;
 			CactusController tcCactus = tClactus.GetComponent<CactusController>();
+
 			tcCactus.Dino = Dino;
 			tcCactus.Point2Destroy = Point2Destroy;
+			tcCactus.score = score;
 		}
 	}
 }

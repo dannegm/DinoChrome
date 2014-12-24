@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CactusController : MonoBehaviour {
 
+	public Score score;
 	public DinoController Dino;
 	public Transform Point2Destroy;
 	public float Speed = 0.5f;
@@ -16,7 +17,9 @@ public class CactusController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 nPosition = new Vector3 (aPosition.x - Speed, aPosition.y, aPosition.z);
-		transform.Translate (Vector3.left * Speed);
+		if (!score.isGameOver) {
+			transform.Translate (Vector3.left * Speed);
+		}
 		
 		if (transform.position.x < Point2Destroy.position.x) {
 			Destroy(transform.gameObject);

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\SpawnCactus.cs" />
      <Compile Include="Assets\Scripts\SpawnClouds.cs" />
      <Compile Include="Assets\Scripts\TextGUI.cs" />
+     <Compile Include="Assets\Scripts\Utils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
