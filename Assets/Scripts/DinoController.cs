@@ -56,6 +56,7 @@ public class DinoController : MonoBehaviour {
 		if (other.tag == "cactus") {
 			Animtr.SetBool("isJump", false);
 			Animtr.SetBool("isDead", true);
+			
 			sound.Wrong.Play();
 			score.GameOver();
 		}

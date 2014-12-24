@@ -7,6 +7,7 @@ public class Score : MonoBehaviour {
 	public int Points;
 	public Transform GameOverText;
 	public Transform Dino;
+	public AudioController sound;
 
 	private DinoController Dinoco;
 	private Animator Animtr;
@@ -16,9 +17,6 @@ public class Score : MonoBehaviour {
 
 	private float ActualTime = 0f;
 	private float ATime = 0f;
-
-	private float LastTap = 0;
-	private float TimeToTap = 0.5f;
 
 	private float cacheDinoSpeed = 0;
 
@@ -41,13 +39,15 @@ public class Score : MonoBehaviour {
 	public void GameOver () {
 		if (Points > Hi) {
 			Hi = Points;
-			PlayerPrefs.SetInt("hi", Points);
+			PlayerPrefs.SetInt ("hi", Points);
 		}
 		Dinoco.Speed = cacheDinoSpeed;
 
-		Time.timeScale = 0;
 		GameOverText.position = new Vector3 (0, 2.198273f, 0);
 		isGameOver = true;
+		sound.Jump.Stop();
+		sound.Up.Stop();
+		Time.timeScale = 0;
 	}
 
 	void Update () {
@@ -63,6 +63,7 @@ public class Score : MonoBehaviour {
 				Points = 0;
 			}
 		}
+
 
 		if (!isGameOver && !cacheGO) {
 			cacheGO = true;
