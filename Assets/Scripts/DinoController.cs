@@ -35,20 +35,20 @@ public class DinoController : MonoBehaviour {
 		if (Speed < SpeedLimit) {
 			Speed = Speed + Time.deltaTime;
 		}
+		
+		if (!onFloor) {
+			Animtr.SetBool ("isJump", true);
+		} else {
+			Animtr.SetBool("isJump", false);
+		}
 	
 		// Aquí va el Jump
-		if (Input.GetMouseButtonDown (0) || Input.GetKey(KeyCode.Space) ||Input.touchCount > 0) {
+		if (Input.GetKey(KeyCode.Space) || Utils.DaTouch() == "TapSafeArea") {
 			if (LastJump < ActualTime) {
 				LastJump = ActualTime + TimeToJump;
 				Dino.rigidbody2D.AddForce(Vector2.up * JumpForce);
 				sound.Jump.Play();
 			}
-		}
-
-		if (!onFloor) {
-			Animtr.SetBool ("isJump", true);
-		} else {
-			Animtr.SetBool("isJump", false);
 		}
 	}
 
