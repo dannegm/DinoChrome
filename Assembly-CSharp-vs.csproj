@@ -89,6 +89,8 @@
      <Compile Include="Assets\Scripts\CloudController.cs" />
      <Compile Include="Assets\Scripts\DinoController.cs" />
      <Compile Include="Assets\Scripts\LeaderBoard.cs" />
+     <Compile Include="Assets\Scripts\OpenLink.cs" />
+     <Compile Include="Assets\Scripts\PlayPause.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\SpawnCactus.cs" />
      <Compile Include="Assets\Scripts\SpawnClouds.cs" />

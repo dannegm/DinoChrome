@@ -8,6 +8,7 @@ public class SpawnCactus : MonoBehaviour {
 	public Vector2 Time2Spawn;
 	
 	public Score score;
+	public PlayPause ppause;
 	public DinoController Dino;
 	public Transform Point2Destroy;
 	
@@ -15,11 +16,14 @@ public class SpawnCactus : MonoBehaviour {
 
 	void Update () {
 		float ActualTime = Time.time;
-		
-		if (ActualTime > LastTime) {
-			float RandTime = Random.Range (Time2Spawn.y, Time2Spawn.y);
-			LastTime += RandTime;
-			CreateCactus();
+		if (!ppause.Pause) {
+			if (ActualTime > LastTime) {
+				float RandTime = Random.Range (Time2Spawn.x, Time2Spawn.y);
+				LastTime += RandTime;
+				CreateCactus();
+			}
+		} else {
+			LastTime = Time.time;
 		}
 	}
 
@@ -33,5 +37,6 @@ public class SpawnCactus : MonoBehaviour {
 		tcCactus.Dino = Dino;
 		tcCactus.Point2Destroy = Point2Destroy;
 		tcCactus.score = score;
+		tcCactus.ppause = ppause;
 	}
 }

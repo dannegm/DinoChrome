@@ -22,6 +22,7 @@ public class Score : MonoBehaviour {
 	public Transform Dino;
 	public AudioController sound;
 
+	public PlayPause ppause;
 	private DinoController Dinoco;
 	private Animator Animtr;
 
@@ -88,10 +89,19 @@ public class Score : MonoBehaviour {
 		Time.timeScale = 0;
 	}
 
+	public float cachePowerUp = 100;
 	void Update () {
 		ATime = Time.time - ActualTime;
-		if (!isGameOver && Points < 25001) {
-			Points = (int)(ATime * (Dinoco.Speed / 2));
+		if (!isGameOver && Points < 25000) {
+			if (!ppause.Pause) {
+
+				if (Points > cachePowerUp) {
+					Time.timeScale += 0.005f;
+					cachePowerUp += 100;
+				}
+
+				Points = (int)(ATime * (Dinoco.Speed / 2));
+			}
 		}
 
 		if (isGameOver) {
