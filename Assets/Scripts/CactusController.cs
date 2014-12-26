@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CactusController : MonoBehaviour {
-
+	
 	public Score score;
 	public PlayPause ppause;
 	public DinoController Dino;
