@@ -16,7 +16,6 @@ public class Utils : MonoBehaviour {
 			
 			RaycastHit hit = new RaycastHit ();
 			if (Physics.Raycast (touchRay, out hit)) {
-				Debug.Log ("Touch in " + hit.transform.name);
 				return hit.transform.name;
 			} else {
 				return "none";

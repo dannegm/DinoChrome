@@ -14,18 +14,27 @@ public class PlayPause : MonoBehaviour {
 	private float LastTap;
 	private bool cacheTap = false;
 
+	// Creamos cache de la escala de tiempo
+	private float TimeScale = 1;
+
 	// Se ejecuta cada fotograma, es por eso que tantos cache por el código
 	void Update () {
-		float ActualTime = Time.time;
+		float ActualTime = Time.unscaledTime;
 
 		// Si no está pausado
 		if (!cacheTap && !Pause) {
 			transform.renderer.material = IconPause;
 			cacheTap = true;
+			// Reanudamos el tiempo
+			Time.timeScale = TimeScale;
 		// Si está pausado
 		} else if (cacheTap && Pause) {
 			transform.renderer.material = IconPlay;
 			cacheTap = false;
+			// Almacenamos la escala de tiempo actual
+			TimeScale = Time.timeScale;
+			// Reducimos el tiempo a 0
+			Time.timeScale = 0;
 		}
 
 		// Si se hace click en el boton contenedor

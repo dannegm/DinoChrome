@@ -103,8 +103,20 @@ public class Score : MonoBehaviour {
 		((PlayGamesPlatform) Social.Active).Authenticate((bool success) => {}, true);
 	}
 
+	private float UATime = 0;
+	private float TTSSound = 0;
+
 	// Metodo cuando el usuario pierde
 	public void GameOver () {
+		TTSSound = Time.unscaledTime;
+		// Detenemos los sonidos
+		
+		/*
+		 * Se supone que esto arregla el bug donde los sonidos se quedan atorados pero no sirve de nada, hay que revisar
+		 * */
+		sound.Jump.Stop();
+		sound.Up.Stop();
+
 		// Si nuestra puntuación es más alta a "la más alta"
 		if (Points > Hi) {
 			// Actualizamos puntuación más alta
@@ -122,14 +134,6 @@ public class Score : MonoBehaviour {
 		GameOverText.position = new Vector3 (0, 2.198273f, 0);
 		// Informamos que se ha perdido
 		isGameOver = true;
-
-		// Detenemos los sonidos
-
-		/*
-		 * Se supone que esto arregla el bug donde los sonidos se quedan atorados pero no sirve de nada, hay que revisar
-		 * */
-		sound.Jump.Stop();
-		sound.Up.Stop();
 
 		// Pausamos el tiempo hasta reiniciar
 
@@ -186,6 +190,13 @@ public class Score : MonoBehaviour {
 				cacheGO = false;
 				// Reestablece la puntuación
 				Points = 0;
+			}
+
+			// Han pasado 0.3 segundos
+			if ((TTSSound + 0.3f) < Time.unscaledTime) {
+				// Detenemos el sonido
+				sound.Wrong.Stop();
+				Debug.Log("Deten sonido infernal!!");
 			}
 		}
 
