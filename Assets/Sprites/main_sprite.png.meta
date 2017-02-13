@@ -1,10 +1,10 @@
 fileFormatVersion: 2
 guid: 5d1cfaeba86704c289bad86d9d563af0
-timeCreated: 1486979603
+timeCreated: 1486989583
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: btn_reload
+    21300000: reload
     21300002: terodaptilo_0
     21300004: terodaptilo_1
     21300006: cactus_01
@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: btn_reload
+      name: reload
       rect:
         serializedVersion: 2
         x: 2

@@ -116,10 +116,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-	<data name="Game.Canvas.NoInternet.Description" xml:space="preserve">
+	<data name="UI.NoInternet.Description" xml:space="preserve">
 		<value>Google Chrome не может отобразить веб-страницу, так как устройство не подключено к Интернету.</value>
 	</data>
-	<data name="Game.Canvas.NoInternet.Title" xml:space="preserve">
+	<data name="UI.NoInternet.Title" xml:space="preserve">
 		<value>Не удается подключиться к Интернету</value>
+	</data>
+	<data name="UI.Settings.Dialog.Title" xml:space="preserve">
+		<value>настройки</value>
+	</data>
+	<data name="UI.Settings.Lang.Label" xml:space="preserve">
+		<value>язык</value>
 	</data>
 </root>

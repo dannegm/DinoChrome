@@ -62,7 +62,10 @@
      <Compile Include="Assets\OldVersions\v1\Scripts\Utils.cs" />
      <Compile Include="Assets\Scripts\ApplicationController.cs" />
      <Compile Include="Assets\Scripts\System\BackButton.cs" />
+     <Compile Include="Assets\Scripts\System\LangManager.cs" />
+     <Compile Include="Assets\Scripts\Test.cs" />
      <Compile Include="Assets\Scripts\UI\RoundedCorners.cs" />
+     <Compile Include="Assets\Scripts\UI\UIController.cs" />
      <Compile Include="Assets\ThirdAssets\SmartLocalization\SmartLocalization\Examples\LoadAllLanguages.cs" />
      <Compile Include="Assets\ThirdAssets\SmartLocalization\SmartLocalization\Scripts\NGUI\SL_NGUILabel.cs" />
      <Compile Include="Assets\ThirdAssets\SmartLocalization\SmartLocalization\Scripts\NGUI\SL_NGUISpriteAtlas.cs" />

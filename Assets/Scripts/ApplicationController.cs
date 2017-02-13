@@ -6,24 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class ApplicationController : MonoBehaviour {
 
-	public string DefaultLang = "es";
 	public string ActualView = "home.about";
-
-	public string lang;
 
 	// Use this for initialization
 	void Start () {
-		lang = PlayerPrefs.GetString ("lang", DefaultLang);
-		SetLang (lang);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	}
-
-	public void SetLang (string _lang) {
-		lang = _lang;
-		PlayerPrefs.SetString ("lang", lang);
 	}
 
 	public void SetActualView (string view) {
