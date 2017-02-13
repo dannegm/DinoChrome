@@ -1,15 +1,10 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SpawnCactus.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/RoundedCorners.cs">
     <Files>
-      <File FileName="Assets/Scripts/DinoController.cs" Line="46" Column="53" />
-      <File FileName="Assets/Scripts/Score.cs" Line="95" Column="9" />
-      <File FileName="Assets/Scripts/CactusController.cs" Line="13" Column="24" />
-      <File FileName="Assets/Scripts/CloudController.cs" Line="6" Column="21" />
-      <File FileName="Assets/Scripts/PlayPause.cs" Line="21" Column="43" />
-      <File FileName="Assets/Scripts/SpawnCactus.cs" Line="18" Column="32" />
-      <File FileName="Assets/Scripts/SpawnClouds.cs" Line="10" Column="21" />
-      <File FileName="Assets/Scripts/ToggleAudio.cs" Line="14" Column="18" />
+      <File FileName="Assets/Scripts/ApplicationController.cs" Line="43" Column="3" />
+      <File FileName="Assets/Scripts/UI/RoundedCorners.cs" Line="37" Column="3" />
+      <File FileName="Assets/Scripts/System/BackButton.cs" Line="10" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
